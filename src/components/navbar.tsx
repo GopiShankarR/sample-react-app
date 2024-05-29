@@ -12,7 +12,10 @@ export const Navbar = () => {
 
   return (<div>
     <Link to="/"> HOME </Link>
-    <Link to="/login"> LOGIN </Link>
+    {!user ? <Link to="/login"> LOGIN </Link> : (
+      <Link to="/createpost"> CREATE POST </Link>
+    )}
+    
     <div>
       {user &&
         (<>
